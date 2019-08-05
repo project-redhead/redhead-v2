@@ -15,19 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Client.Host"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B3A70024-3424-4F26-A6E0-90B7F3A6D0B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Core.Domain", "ProjectRedhead.Core.Domain\ProjectRedhead.Core.Domain.csproj", "{003EC764-027D-4BAE-8B00-E0E36051B507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Core.Domain", "ProjectRedhead.Core.Domain\ProjectRedhead.Core.Domain.csproj", "{003EC764-027D-4BAE-8B00-E0E36051B507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Infrastructure", "ProjectRedhead.Infrastructure\ProjectRedhead.Infrastructure.csproj", "{5B7D5AFC-4DDB-4789-96A9-979A1125B563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Infrastructure", "ProjectRedhead.Infrastructure\ProjectRedhead.Infrastructure.csproj", "{5B7D5AFC-4DDB-4789-96A9-979A1125B563}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Core.Infrastructure", "ProjectRedhead.Core.Infrastructure\ProjectRedhead.Core.Infrastructure.csproj", "{5F1583C5-10FC-4AA6-BB62-DF3E2B9DF3FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Core.Infrastructure", "ProjectRedhead.Core.Infrastructure\ProjectRedhead.Core.Infrastructure.csproj", "{5F1583C5-10FC-4AA6-BB62-DF3E2B9DF3FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{9A2D68CC-CB8A-4E0A-915D-B3668FE8B2EC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E5F90871-BF5C-4E8A-B4F5-A0BFAAA0DEA7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Application", "ProjectRedhead.Application\ProjectRedhead.Application.csproj", "{F181F9FC-929C-440C-86CD-805314F9E8BF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Client.Host", "ProjectRedhead.Client.Host\ProjectRedhead.Client.Host.csproj", "{3C25EB48-309A-42C5-BE29-83B869E77E1D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E6A6A482-3639-43D2-95B5-44F5B8DF039A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
