@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ProjectRedhead.Domain
+namespace ProjectRedhead.Core.Domain
 {
-    public class Entity
+    public abstract class Entity
     {
         public string Id { get; set; }
 

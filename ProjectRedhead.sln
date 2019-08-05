@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Domain", "ProjectRedhead.Domain\ProjectRedhead.Domain.csproj", "{6EA7EDD2-1EFD-4823-A038-0A9ACD941DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Domain", "ProjectRedhead.Domain\ProjectRedhead.Domain.csproj", "{6EA7EDD2-1EFD-4823-A038-0A9ACD941DED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E5F90871-BF5C-4E8A-B4F5-A0BFAAA0DEA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Application", "ProjectRedhead.Application\ProjectRedhead.Application.csproj", "{F181F9FC-929C-440C-86CD-805314F9E8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Application", "ProjectRedhead.Application\ProjectRedhead.Application.csproj", "{F181F9FC-929C-440C-86CD-805314F9E8BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Client.Host", "ProjectRedhead.Client.Host\ProjectRedhead.Client.Host.csproj", "{3C25EB48-309A-42C5-BE29-83B869E77E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Client.Host", "ProjectRedhead.Client.Host\ProjectRedhead.Client.Host.csproj", "{3C25EB48-309A-42C5-BE29-83B869E77E1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B3A70024-3424-4F26-A6E0-90B7F3A6D0B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Core.Domain", "ProjectRedhead.Core.Domain\ProjectRedhead.Core.Domain.csproj", "{003EC764-027D-4BAE-8B00-E0E36051B507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003EC764-027D-4BAE-8B00-E0E36051B507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003EC764-027D-4BAE-8B00-E0E36051B507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003EC764-027D-4BAE-8B00-E0E36051B507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003EC764-027D-4BAE-8B00-E0E36051B507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +47,7 @@ Global
 		{6EA7EDD2-1EFD-4823-A038-0A9ACD941DED} = {0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}
 		{F181F9FC-929C-440C-86CD-805314F9E8BF} = {0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}
 		{3C25EB48-309A-42C5-BE29-83B869E77E1D} = {E5F90871-BF5C-4E8A-B4F5-A0BFAAA0DEA7}
+		{003EC764-027D-4BAE-8B00-E0E36051B507} = {B3A70024-3424-4F26-A6E0-90B7F3A6D0B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {775CCBBC-89B6-453F-BDB5-B871769EB3B3}
