@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ProjectRedhead.Core.Infrastructure;
+using ProjectRedhead.Domain.UserAggregrate;
+using ProjectRedhead.Infrastructure;
 
 namespace ProjectRedhead.Application
 {
@@ -26,6 +29,14 @@ namespace ProjectRedhead.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Database provider
+            services.AddSingleton<DatabaseProvider>(builder =>
+                new DatabaseProvider(Configuration.GetConnectionString("MongoDatabase"),
+                    Configuration.GetValue("Database:Name", "redhead")));
+
+            // Repositories
+            services.AddSingleton<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

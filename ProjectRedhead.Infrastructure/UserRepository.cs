@@ -7,7 +7,7 @@ namespace ProjectRedhead.Infrastructure
 {
     public class UserRepository : EntityCrudRepository<User>, IUserRepository
     {
-        public UserRepository(IMongoDatabase database) : base(database)
+        public UserRepository(DatabaseProvider provider) : base(provider.Database)
         {
         }
     }

@@ -13,4 +13,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectRedhead.Core.Domain\ProjectRedhead.Core.Domain.csproj" />
+    <ProjectReference Include="..\ProjectRedhead.Core.Infrastructure\ProjectRedhead.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\ProjectRedhead.Domain\ProjectRedhead.Domain.csproj" />
+    <ProjectReference Include="..\ProjectRedhead.Infrastructure\ProjectRedhead.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
