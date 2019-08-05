@@ -9,7 +9,7 @@ namespace ProjectRedhead.Domain.UserAggregrate
     /// </summary>
     public enum UserRole
     {
-        Default,
+        Member,
         Moderator,
         Admin
     }

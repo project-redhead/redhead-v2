@@ -26,9 +26,15 @@ namespace ProjectRedhead.Domain.UserAggregrate
         public int Points { get; set; }
 
 
-        public User(string displayName)
+        public User(string displayName) : this(displayName, UserRole.Member, 100)
+        {
+        }
+
+        public User(string displayName, UserRole role, int points)
         {
             DisplayName = displayName;
+            Role = role;
+            Points = points;
         }
     }
 }
