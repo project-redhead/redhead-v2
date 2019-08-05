@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -61,6 +62,7 @@ namespace ProjectRedhead.Application
             services.AddSingleton<IUserRepository, UserRepository>();
 
             // Third party services
+            services.AddMediatR(typeof(Startup).Assembly);
             services.AddOpenApiDocument(config => { config.Title = "redhead API"; });
         }
 
