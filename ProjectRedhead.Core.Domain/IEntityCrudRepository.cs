@@ -12,6 +12,8 @@ namespace ProjectRedhead.Core.Domain
 
         Task<T> GetAsync(string id);
 
+        Task<T> GetOrAddByIdAsync(T entity);
+
         Task<IEnumerable<T>> GetAllAsync(int skip = 0, int take = -1);
 
         Task ReplaceAsync(string id, T newEntity);
