@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProjectRedhead.Client.Host.Controllers
+namespace ProjectRedhead.Client.Application.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
