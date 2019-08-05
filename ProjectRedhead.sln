@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E5F908
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Application", "ProjectRedhead.Application\ProjectRedhead.Application.csproj", "{F181F9FC-929C-440C-86CD-805314F9E8BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Client.Host", "ProjectRedhead.Client.Host\ProjectRedhead.Client.Host.csproj", "{3C25EB48-309A-42C5-BE29-83B869E77E1D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B3A70024-3424-4F26-A6E0-90B7F3A6D0B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Core.Domain", "ProjectRedhead.Core.Domain\ProjectRedhead.Core.Domain.csproj", "{003EC764-027D-4BAE-8B00-E0E36051B507}"
@@ -21,9 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectRedhead.Core.Infrastructure", "ProjectRedhead.Core.Infrastructure\ProjectRedhead.Core.Infrastructure.csproj", "{5F1583C5-10FC-4AA6-BB62-DF3E2B9DF3FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{9A2D68CC-CB8A-4E0A-915D-B3668FE8B2EC}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{80CB8668-2206-4729-B536-C555640535AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Client.Application", "ProjectRedhead.Client.Application\ProjectRedhead.Client.Application.csproj", "{E64CB94B-EC17-48C5-BCB3-21FD437DF031}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,6 @@ Global
 		{F181F9FC-929C-440C-86CD-805314F9E8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F181F9FC-929C-440C-86CD-805314F9E8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F181F9FC-929C-440C-86CD-805314F9E8BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C25EB48-309A-42C5-BE29-83B869E77E1D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{003EC764-027D-4BAE-8B00-E0E36051B507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{003EC764-027D-4BAE-8B00-E0E36051B507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003EC764-027D-4BAE-8B00-E0E36051B507}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +53,10 @@ Global
 		{80CB8668-2206-4729-B536-C555640535AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80CB8668-2206-4729-B536-C555640535AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80CB8668-2206-4729-B536-C555640535AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64CB94B-EC17-48C5-BCB3-21FD437DF031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64CB94B-EC17-48C5-BCB3-21FD437DF031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64CB94B-EC17-48C5-BCB3-21FD437DF031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64CB94B-EC17-48C5-BCB3-21FD437DF031}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,10 +64,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6EA7EDD2-1EFD-4823-A038-0A9ACD941DED} = {0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}
 		{F181F9FC-929C-440C-86CD-805314F9E8BF} = {0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}
-		{3C25EB48-309A-42C5-BE29-83B869E77E1D} = {E5F90871-BF5C-4E8A-B4F5-A0BFAAA0DEA7}
 		{003EC764-027D-4BAE-8B00-E0E36051B507} = {B3A70024-3424-4F26-A6E0-90B7F3A6D0B6}
 		{5B7D5AFC-4DDB-4789-96A9-979A1125B563} = {0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}
 		{5F1583C5-10FC-4AA6-BB62-DF3E2B9DF3FA} = {B3A70024-3424-4F26-A6E0-90B7F3A6D0B6}
+		{E64CB94B-EC17-48C5-BCB3-21FD437DF031} = {E5F90871-BF5C-4E8A-B4F5-A0BFAAA0DEA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {775CCBBC-89B6-453F-BDB5-B871769EB3B3}
