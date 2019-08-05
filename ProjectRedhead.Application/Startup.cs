@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using ProjectRedhead.Core.Infrastructure;
 using ProjectRedhead.Domain.UserAggregrate;
 using ProjectRedhead.Infrastructure;
@@ -56,7 +58,17 @@ namespace ProjectRedhead.Application
                     options.SaveTokens = true;
 
                     options.Scope.Add("identify");
-                });
+                })
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+                    {
+                        options.RequireHttpsMetadata = false;
+                        options.SaveToken = true;
+
+                        // TODO: Read from config
+                        options.TokenValidationParameters = new TokenValidationParameters();
+
+                        options.IncludeErrorDetails = true;
+                    });
 
             // Repositories
             services.AddSingleton<IUserRepository, UserRepository>();
