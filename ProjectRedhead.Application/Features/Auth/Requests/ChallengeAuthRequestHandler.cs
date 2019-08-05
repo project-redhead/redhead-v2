@@ -12,7 +12,7 @@ namespace ProjectRedhead.Application.Features.Auth.Requests
         {
             var action = request.Controller.Challenge(new AuthenticationProperties()
             {
-                RedirectUri = request.ReturnUrl
+                RedirectUri = request.FinalizeReturnUrl
             }, request.ProviderName);
 
             return Task.FromResult<IActionResult>(action);

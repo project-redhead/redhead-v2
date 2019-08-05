@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -44,6 +45,14 @@ namespace ProjectRedhead.Core.Infrastructure
         {
             var item = await GetCollection().FindAsync(r => r.Id == id);
             return await item.SingleOrDefaultAsync();
+        }
+
+        public async Task<T> GetOrAddByIdAsync(T entity)
+        {
+            var item = await GetAsync(entity.Id);
+            item = item ?? await AddAsync(entity);
+
+            return item;
         }
 
         public virtual async Task<IEnumerable<T>> GetAllAsync(int skip = 0, int take = -1)

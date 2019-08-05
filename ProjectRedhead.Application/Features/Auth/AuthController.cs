@@ -25,6 +25,8 @@ namespace ProjectRedhead.Application.Features.Auth
                 Url.Action(nameof(ChallengeCallback), new { returnUrl }), this));
         }
 
+        [HttpGet("challenge/callback")]
+        [Authorize]
         public async Task<IActionResult> ChallengeCallback([FromQuery] string returnUrl = "")
         {
             throw new NotImplementedException();
