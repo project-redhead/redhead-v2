@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectRedhead.Core.Infrastructure\ProjectRedhead.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\ProjectRedhead.Domain\ProjectRedhead.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
