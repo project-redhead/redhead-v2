@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,10 +38,31 @@ namespace ProjectRedhead.Application
                 new DatabaseProvider(Configuration.GetConnectionString("MongoDatabase"),
                     Configuration.GetValue("Database:Name", "redhead")));
 
+            // Authentication
+            services.AddAuthentication(options =>
+                    {
+                        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    })
+                .AddCookie()
+                .AddDiscord("discord", options =>
+                {
+                    options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+                    options.ClientId = Configuration.GetValue<string>("Authentication:Discord:Id");
+                    options.ClientSecret = Configuration.GetValue<string>("Authentication:Discord:Secret");
+
+                    options.CallbackPath = "/signin-discord";
+
+                    options.SaveTokens = true;
+
+                    options.Scope.Add("identify");
+                });
+
             // Repositories
             services.AddSingleton<IUserRepository, UserRepository>();
 
             // Third party services
+            services.AddMediatR(typeof(Startup).Assembly);
             services.AddOpenApiDocument(config => { config.Title = "redhead API"; });
         }
 
@@ -58,6 +82,8 @@ namespace ProjectRedhead.Application
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
