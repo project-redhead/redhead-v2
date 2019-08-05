@@ -21,6 +21,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Core.Infrastructure", "ProjectRedhead.Core.Infrastructure\ProjectRedhead.Core.Infrastructure.csproj", "{5F1583C5-10FC-4AA6-BB62-DF3E2B9DF3FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0EEFED50-41AD-418B-A0C4-3C14AC8A7D73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E5F90871-BF5C-4E8A-B4F5-A0BFAAA0DEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Application", "ProjectRedhead.Application\ProjectRedhead.Application.csproj", "{F181F9FC-929C-440C-86CD-805314F9E8BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRedhead.Client.Host", "ProjectRedhead.Client.Host\ProjectRedhead.Client.Host.csproj", "{3C25EB48-309A-42C5-BE29-83B869E77E1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
