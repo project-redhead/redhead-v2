@@ -48,8 +48,8 @@ namespace ProjectRedhead.Application
                 {
                     options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 
-                    options.AppId = Configuration.GetValue<string>("Authentication:Discord:Id");
-                    options.AppSecret = Configuration.GetValue<string>("Authentication:Discord:Secret");
+                    options.ClientId = Configuration.GetValue<string>("Authentication:Discord:Id");
+                    options.ClientSecret = Configuration.GetValue<string>("Authentication:Discord:Secret");
 
                     options.CallbackPath = "/signin-discord";
 
@@ -82,6 +82,8 @@ namespace ProjectRedhead.Application
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

@@ -29,7 +29,7 @@ namespace ProjectRedhead.Application.Features.Auth
         [Authorize]
         public async Task<IActionResult> ChallengeCallback([FromQuery] string returnUrl = "")
         {
-            throw new NotImplementedException();
+            return await _mediator.Send(new FinalizeAuthRequest(HttpContext, returnUrl));
         }
     }
 }
