@@ -11,18 +11,6 @@ namespace ProjectRedhead.Application.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly IUserRepository _repository;
 
-        public ValuesController(IUserRepository repository)
-        {
-            _repository = repository;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Test()
-        {
-            await _repository.AddAsync(new User("Gino"));
-            return Ok();
-        }
     }
 }

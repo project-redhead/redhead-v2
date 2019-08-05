@@ -37,6 +37,9 @@ namespace ProjectRedhead.Application
 
             // Repositories
             services.AddSingleton<IUserRepository, UserRepository>();
+
+            // Third party services
+            services.AddOpenApiDocument(config => { config.Title = "redhead API"; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +48,8 @@ namespace ProjectRedhead.Application
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseOpenApi();
+                app.UseSwaggerUi3();
             }
             else
             {
