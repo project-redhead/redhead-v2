@@ -14,9 +14,39 @@ const App = () => {
 			</div>
 			<div id="content">
 				<h1>Hey Gino 👋</h1>
-				<Card title="Aktuelle Wetten">
-					Lädt...
-				</Card>
+
+				<div className="grid-container">
+					<div className="item w-4">
+						<div className="gap">
+							<Card>Test</Card>
+						</div>
+					</div>
+					<div className="item w-4">
+						<div className="gap">
+							<Card>Test</Card>
+						</div>
+					</div>
+					<div className="item w-4">
+						<div className="gap">
+							<Card>Test</Card>
+						</div>
+					</div>
+					<div className="item w-4">
+						<div className="gap">
+							<Card>Test</Card>
+						</div>
+					</div>
+					<div className="item w-4">
+						<div className="gap">
+							<Card>Test</Card>
+						</div>
+					</div>
+					<div className="item w-4">
+						<div className="gap">
+							<Card>Test</Card>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
