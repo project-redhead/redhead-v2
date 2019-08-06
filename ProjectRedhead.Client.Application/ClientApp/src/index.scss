@@ -1,0 +1,14 @@
+@import './styles/fonts';
+@import './styles/variables';
+
+@import '~@iconscout/unicons/css/unicons.css';
+
+
+body {
+  margin: 0;
+  font-family: $body-font, Arial, Helvetica, sans-serif
+}
+
+h1, h2, h3 {
+  font-family: $title-font, Arial, Helvetica, sans-serif;
+}

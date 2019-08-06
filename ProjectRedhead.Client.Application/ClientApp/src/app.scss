@@ -1,0 +1,39 @@
+@import './styles/variables';
+
+#shell {
+	#sidebar {
+		position: absolute;
+		left: 0;
+
+		// Mobile
+		@media screen and (max-width: $break-sm) {
+			bottom: 0;
+			width: 100%;
+
+			.sidebar-container {
+				height: 80px;
+				width: 100%;
+
+				flex-direction: row;
+				justify-content: space-evenly;
+			}
+		}
+
+		// Desktop
+		@media screen and (min-width: $break-sm) {
+			top: 0;
+		}
+	}
+
+	#sidebar + #content {
+		// Mobile
+		@media screen and (max-width: $break-sm) {
+			padding: $medium-padding;
+		}
+
+		// Desktop
+		@media screen and (min-width: $break-sm) {
+			padding-left: 80px + $medium-padding;
+		}
+	}
+}

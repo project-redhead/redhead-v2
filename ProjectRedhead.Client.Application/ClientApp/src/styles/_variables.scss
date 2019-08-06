@@ -1,0 +1,35 @@
+// Colors
+$light: #FFFFFF;
+$dark: #1F1F1F;
+
+$blue: #4A61A7;
+$light-blue: #3D79F2;
+$dark-blue: #2A3680;
+$red: #FF003C;
+
+$primary-color: $dark-blue;
+$primary-color-dark: darken($primary-color, 10%);
+$primary-color-light: lighten($primary-color, 10%);
+
+// Paddings/margins
+$small-padding: 8px;
+$large-padding: 32px;
+$medium-padding: ($small-padding + $large-padding) / 2;
+
+// Easings
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+// Shadows
+$shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)!important;
+$shadow-md: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
+$shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)!important;
+
+// Responsive stuff
+$break-sm: 640px;
+$break-md: 768px;
+$break-lg: 1024px;
+$break-xl: 1280px;
+
+// Fonts
+$title-font: 'Zona Pro Extra Bold';
+$body-font: 'Roboto';

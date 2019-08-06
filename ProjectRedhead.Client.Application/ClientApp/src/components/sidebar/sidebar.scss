@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.sidebar-container {
+	width: 80px;
+	background-color: $primary-color;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	box-shadow: 10px 0px 15px -3px #0000001a, 4px 0px 6px -2px #0000000d;
+
+	a.item {
+		text-decoration: none;
+		color: $light;
+
+		height: 80px;
+		width: 80px;
+
+		display: flex;
+
+		transition: background-color 0.4s $ease-out-expo;
+
+		cursor: pointer;
+
+		i {
+			font-size: 24px;
+			margin: auto;
+			align-self: center;
+		}
+
+		&:hover {
+			background-color: $primary-color-dark;
+		}
+	}
+}
