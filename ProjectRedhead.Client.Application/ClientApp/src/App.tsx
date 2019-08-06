@@ -1,10 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
-import Sidebar from './components/sidebar'
-import Card from './components/card'
+import Sidebar from './components/sidebar';
+import Card from './components/card';
 
-import AuthService from './common/services/auth'
+import AuthService from './common/services/auth';
+import ConfigService from './common/services/config';
+
+import { LoginPage } from './features/auth'
 
 import './app.scss';
 
@@ -22,7 +25,7 @@ const App = () => {
 
 					{!AuthService.isTokenValid() &&
 						<div>
-							<Route path="/login" component={() => <span>Redirecting...</span>} />
+							<Route path="/login" component={LoginPage} />
 							<Redirect to="/login" />
 						</div>
 					}

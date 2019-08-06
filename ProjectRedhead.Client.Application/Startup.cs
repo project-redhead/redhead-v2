@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProjectRedhead.Client.Application.Data;
 
 namespace ProjectRedhead.Client.Application
 {
@@ -23,6 +24,7 @@ namespace ProjectRedhead.Client.Application
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddOptions();
+            services.Configure<ClientConfig>(Configuration.GetSection("Redhead:Client"));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
