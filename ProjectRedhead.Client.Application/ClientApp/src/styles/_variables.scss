@@ -1,5 +1,7 @@
 // Colors
 $light: #FFFFFF;
+$light-01: darken($light, 5%);
+
 $dark: #1F1F1F;
 
 $blue: #4A61A7;
@@ -9,7 +11,7 @@ $red: #FF003C;
 
 $primary-color: $dark-blue;
 $primary-color-dark: darken($primary-color, 10%);
-$primary-color-light: lighten($primary-color, 10%);
+$primary-color-light: #3D79F2; // lighten($primary-color, 10%);
 
 // Paddings/margins
 $small-padding: 8px;
@@ -33,3 +35,6 @@ $break-xl: 1280px;
 // Fonts
 $title-font: 'Zona Pro Extra Bold';
 $body-font: 'Roboto';
+
+// Borders
+$border-radius-sm: 3px;

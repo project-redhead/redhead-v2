@@ -21,7 +21,7 @@
 
 		display: flex;
 
-		transition: background-color 0.4s $ease-out-expo;
+		transition: all 0.4s $ease-out-expo;
 
 		cursor: pointer;
 
@@ -33,6 +33,19 @@
 
 		&:hover {
 			background-color: $primary-color-dark;
+		}
+
+		&:active {
+			transition-duration: 0.07s;
+
+			border-radius: 50%;
+			opacity: 0.9;
+
+			transform: scale(0.9);
+		}
+
+		&.secondary {
+			opacity: 1;
 		}
 	}
 }

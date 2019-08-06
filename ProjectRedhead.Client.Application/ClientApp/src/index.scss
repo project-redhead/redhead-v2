@@ -3,10 +3,14 @@
 
 @import '~@iconscout/unicons/css/unicons.css';
 
+@import './styles/grid.scss';
 
 body {
   margin: 0;
-  font-family: $body-font, Arial, Helvetica, sans-serif
+  font-family: $body-font, Arial, Helvetica, sans-serif;
+
+  color: $dark;
+  background-color: $light-01;
 }
 
 h1, h2, h3 {
