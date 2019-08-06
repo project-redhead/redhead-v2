@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 
 import Sidebar from './components/sidebar'
 import Card from './components/card'
+
+import AuthService from './common/services/auth'
 
 import './app.scss';
 
@@ -13,6 +15,18 @@ const App = () => {
 				<Sidebar />
 			</div>
 			<div id="content">
+				<BrowserRouter>
+					{AuthService.isTokenValid() &&
+						<Route exact path="/" component={() => <span>Hello</span>} />
+					}
+
+					{!AuthService.isTokenValid() &&
+						<div>
+							<Route path="/login" component={() => <span>Redirecting...</span>} />
+							<Redirect to="/login" />
+						</div>
+					}
+				</BrowserRouter>
 				<h1>Hey Gino 👋</h1>
 
 				<div className="grid-container">
