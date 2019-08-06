@@ -33,6 +33,7 @@
 
 		// Desktop
 		@media screen and (min-width: $break-sm) {
+			padding: $medium-padding;
 			padding-left: 80px + $medium-padding;
 		}
 	}

@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+div.card-container {
+	display: block;
+	background-color: $light;
+	box-shadow: $shadow;
+
+	border-radius: $border-radius-sm;
+
+	.title {
+		padding: ($medium-padding / 2) $medium-padding;
+		color: $light;
+		background-color: $primary-color-light;
+
+		border-radius: $border-radius-sm $border-radius-sm 0 0;
+	}
+
+	.content {
+		padding: $medium-padding;
+	}
+}
