@@ -22,6 +22,8 @@ namespace ProjectRedhead.Client.Application
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddOptions();
+
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

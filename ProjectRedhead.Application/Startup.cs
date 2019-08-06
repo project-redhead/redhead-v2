@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using ProjectRedhead.Application.Data.Options;
+using ProjectRedhead.Application.Services;
 using ProjectRedhead.Core.Infrastructure;
 using ProjectRedhead.Domain.UserAggregrate;
 using ProjectRedhead.Infrastructure;
@@ -33,15 +37,23 @@ namespace ProjectRedhead.Application
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            // Options
+            services.AddOptions();
+            services.Configure<RedheadSecurityOptions>(Configuration.GetSection("Redhead:Security"));
+
             // Database provider
             services.AddSingleton<DatabaseProvider>(builder =>
                 new DatabaseProvider(Configuration.GetConnectionString("MongoDatabase"),
                     Configuration.GetValue("Database:Name", "redhead")));
 
             // Authentication
+            services.AddSingleton<JwtTokenService>();
             services.AddAuthentication(options =>
                     {
                         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+                        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     })
                 .AddCookie()
                 .AddDiscord("discord", options =>
@@ -56,7 +68,19 @@ namespace ProjectRedhead.Application
                     options.SaveTokens = true;
 
                     options.Scope.Add("identify");
-                });
+                })
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+                    {
+                        options.RequireHttpsMetadata = false;
+                        options.SaveToken = true;
+
+                        // TODO: Read from config
+                        options.TokenValidationParameters = services.BuildServiceProvider()
+                            .GetRequiredService<IOptions<RedheadSecurityOptions>>()
+                            .Value.TokenValidationParameters;
+
+                        options.IncludeErrorDetails = true;
+                    });
 
             // Repositories
             services.AddSingleton<IUserRepository, UserRepository>();
