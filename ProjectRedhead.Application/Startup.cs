@@ -15,6 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using ProjectRedhead.Application.Data.Options;
+using ProjectRedhead.Application.Services;
 using ProjectRedhead.Core.Infrastructure;
 using ProjectRedhead.Domain.UserAggregrate;
 using ProjectRedhead.Infrastructure;
@@ -35,12 +37,17 @@ namespace ProjectRedhead.Application
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            // Options
+            services.AddOptions();
+            services.Configure<RedheadSecurityOptions>(Configuration.GetSection("Redhead:Security"));
+
             // Database provider
             services.AddSingleton<DatabaseProvider>(builder =>
                 new DatabaseProvider(Configuration.GetConnectionString("MongoDatabase"),
                     Configuration.GetValue("Database:Name", "redhead")));
 
             // Authentication
+            services.AddSingleton<JwtTokenService>();
             services.AddAuthentication(options =>
                     {
                         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
