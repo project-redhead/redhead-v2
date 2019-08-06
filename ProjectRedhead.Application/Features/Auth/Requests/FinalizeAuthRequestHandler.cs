@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.IdentityModel.Tokens;
 using ProjectRedhead.Application.Exceptions;
+using ProjectRedhead.Application.Services;
 using ProjectRedhead.Domain.UserAggregrate;
 
 namespace ProjectRedhead.Application.Features.Auth.Requests
@@ -18,10 +19,12 @@ namespace ProjectRedhead.Application.Features.Auth.Requests
     public class FinalizeAuthRequestHandler : IRequestHandler<FinalizeAuthRequest, IActionResult>
     {
         private readonly IUserRepository _userRepository;
+        private readonly JwtTokenService _tokenService;
 
-        public FinalizeAuthRequestHandler(IUserRepository userRepository)
+        public FinalizeAuthRequestHandler(IUserRepository userRepository, JwtTokenService tokenService)
         {
             _userRepository = userRepository;
+            _tokenService = tokenService;
         }
 
         public async Task<IActionResult> Handle(FinalizeAuthRequest request, CancellationToken cancellationToken)
@@ -39,24 +42,8 @@ namespace ProjectRedhead.Application.Features.Auth.Requests
 
             // Generate JWT
             // TODO: Refactor to service class
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes("getsecuritykeyfromappsettingspls!");
 
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Issuer = request.Context.Request.Host.Host,
-
-                Subject = new ClaimsIdentity(new List<Claim>
-                {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id)
-                }),
-
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            var jwt = tokenHandler.WriteToken(token);
+            var jwt = _tokenService.WriteToken(user.Id, request.Context.Request.Host.Host);
 
             var redirect = QueryHelpers.AddQueryString(request.RedirectUrl, "token", jwt);
             return new RedirectResult(redirect);
