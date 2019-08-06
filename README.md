@@ -12,8 +12,14 @@ Project REDHEAD ist eine Neuentwicklung unserer Projektarbeit, das Studenten der
 - **Docker** fürs Deployment
 - **Discord** als OAuth Provider für die Anmeldung
 
+### und für Freaks
+- **MediatR** fürs Mediator Pattern
+- **AutoMapper** fürs Mapping
+
 ## Einstellungen
 `ProjectRedhead.Application/appsettings.json` benötigt folgende Einstellungen:
+
+> **TODO:** Einstellungen und deren Keys aktualisieren.
 
 |Key|Beschreibung|Default|
 |---|---|---|

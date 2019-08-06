@@ -51,6 +51,9 @@ namespace ProjectRedhead.Application
             services.AddAuthentication(options =>
                     {
                         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+                        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     })
                 .AddCookie()
                 .AddDiscord("discord", options =>
