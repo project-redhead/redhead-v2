@@ -26,6 +26,14 @@
 	}
 
 	#sidebar + #content {
-		margin-left: 80px + $medium-padding;
+		// Mobile
+		@media screen and (max-width: $break-sm) {
+			padding: $medium-padding;
+		}
+
+		// Desktop
+		@media screen and (min-width: $break-sm) {
+			padding-left: 80px + $medium-padding;
+		}
 	}
 }
