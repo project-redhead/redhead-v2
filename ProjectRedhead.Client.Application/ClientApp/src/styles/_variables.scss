@@ -1,0 +1,15 @@
+// Colors
+$light: #FFFFFF;
+$dark: #1F1F1F;
+
+$blue: #4A61A7;
+$light-blue: #3D79F2;
+$dark-blue: #2A3680;
+$red: #FF003C;
+
+$primary-color: $dark-blue;
+$primary-color-dark: darken($primary-color, 10%);
+$primary-color-light: lighten($primary-color, 10%);
+
+// Easings
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);

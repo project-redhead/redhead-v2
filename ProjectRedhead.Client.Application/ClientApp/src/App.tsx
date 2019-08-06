@@ -1,8 +1,20 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom'
+
+import Sidebar from './components/sidebar'
+
+import './app.scss';
 
 const App = () => {
 	return (
-		<h1>Hello world</h1>
+		<div id="shell">
+			<div id="sidebar">
+				<Sidebar />
+			</div>
+			<div id="content">
+
+			</div>
+		</div>
 	);
 }
 
