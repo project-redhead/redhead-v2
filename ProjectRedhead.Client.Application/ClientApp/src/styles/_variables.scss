@@ -11,6 +11,11 @@ $primary-color: $dark-blue;
 $primary-color-dark: darken($primary-color, 10%);
 $primary-color-light: lighten($primary-color, 10%);
 
+// Paddings/margins
+$small-padding: 8px;
+$large-padding: 32px;
+$medium-padding: ($small-padding + $large-padding) / 2;
+
 // Easings
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
@@ -24,3 +29,7 @@ $break-sm: 640px;
 $break-md: 768px;
 $break-lg: 1024px;
 $break-xl: 1280px;
+
+// Fonts
+$title-font: 'Zona Pro Extra Bold';
+$body-font: 'Roboto';

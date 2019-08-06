@@ -12,7 +12,7 @@ const App = () => {
 				<Sidebar />
 			</div>
 			<div id="content">
-
+				<h1>Hey Gino 👋</h1>
 			</div>
 		</div>
 	);
