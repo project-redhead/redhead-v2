@@ -72,7 +72,9 @@ namespace ProjectRedhead.Application
                         options.SaveToken = true;
 
                         // TODO: Read from config
-                        options.TokenValidationParameters = new TokenValidationParameters();
+                        options.TokenValidationParameters = services.BuildServiceProvider()
+                            .GetRequiredService<IOptions<RedheadSecurityOptions>>()
+                            .Value.TokenValidationParameters;
 
                         options.IncludeErrorDetails = true;
                     });

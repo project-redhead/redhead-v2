@@ -27,7 +27,7 @@ namespace ProjectRedhead.Application.Services
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Issuer = issuer,
+                Issuer = _securityOptions.Issuer,
 
                 Subject = new ClaimsIdentity(new List<Claim>
                 {
