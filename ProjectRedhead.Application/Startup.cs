@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using ProjectRedhead.Application.Data.Options;
 using ProjectRedhead.Application.Services;
 using ProjectRedhead.Core.Infrastructure;
+using ProjectRedhead.Domain.BetAggregrate;
 using ProjectRedhead.Domain.UserAggregrate;
 using ProjectRedhead.Infrastructure;
 
@@ -89,6 +90,7 @@ namespace ProjectRedhead.Application
 
             // Repositories
             services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IBetRepository, BetRepository>();
 
             // Third party services
             services.AddMediatR(typeof(Startup).Assembly);
