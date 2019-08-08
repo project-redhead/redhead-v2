@@ -10,7 +10,7 @@ const Dashboard = () => {
 	const [user, setUser] = useState<User>({});
 	useEffect(() => {
 		UserApiService.getCurrentUser().then(u => setUser(u));
-	}, [user]);
+	}, []);
 
 	return (
 		<div>

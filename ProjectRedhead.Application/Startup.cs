@@ -38,6 +38,7 @@ namespace ProjectRedhead.Application
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddHttpContextAccessor();
+            services.AddCors();
 
             // Options
             services.AddOptions();
@@ -111,6 +112,9 @@ namespace ProjectRedhead.Application
             }
 
             app.UseHttpsRedirection();
+
+            // TODO: Apply correct settings while in production
+            app.UseCors(builder => { builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials(); });
 
             app.UseAuthentication();
             app.UseMvc();
