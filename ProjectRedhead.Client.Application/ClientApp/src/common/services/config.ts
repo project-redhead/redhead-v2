@@ -3,7 +3,7 @@ export interface Config {
 }
 
 export class ConfigService {
-	async getConfig(): Promise<Config> {
+	async getConfig(): Promise<Config | undefined> {
 		let response = await fetch('/config', {
 			method: 'GET'
 		});
@@ -11,7 +11,6 @@ export class ConfigService {
 		let json = await response.json();
 		let config = json as Config;
 
-		alert(config.apiEndpointUrl);
 		return config;
 	}
 }

@@ -1,4 +1,4 @@
-import ConfigService from './config';
+import ConfigService, { Config } from './config';
 export class AuthService {
 	setToken(token: string) {
 		localStorage.setItem('redhead_token', token);
@@ -15,7 +15,15 @@ export class AuthService {
 
 	redirectToLogin() {
 		ConfigService.getConfig().then(c => {
-			window.location.href = `${c.apiBaseUrl}/auth/challenge/discord?returnUrl=${window.location.host}/login/callback`;
+			if (c === undefined) {
+				alert('Invalid config');
+				return;
+			}
+
+			let clientEndpointUrl = `${window.location.protocol}//${window.location.host}`;
+			let challengeUrl = `${c.apiEndpointUrl}/auth/challenge/discord?returnUrl=${clientEndpointUrl}/login/callback`;
+
+			window.location.href = challengeUrl;
 		});
 	}
 }

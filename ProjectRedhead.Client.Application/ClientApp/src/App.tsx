@@ -7,7 +7,7 @@ import Card from './components/card';
 import AuthService from './common/services/auth';
 import ConfigService from './common/services/config';
 
-import { LoginPage } from './features/auth'
+import { LoginPage, LoginCallbackPage } from './features/auth'
 
 import './app.scss';
 
@@ -19,14 +19,19 @@ const App = () => {
 			</div>
 			<div id="content">
 				<BrowserRouter>
+					{/* Login pages */}
+					<Route exact path="/login" component={LoginPage} />
+					<Route path="/login/callback" component={LoginCallbackPage} />
+
+					{/* Member pages */}
 					{AuthService.isTokenValid() &&
 						<Route exact path="/" component={() => <span>Hello</span>} />
 					}
 
+					{/* Redirect to login */}
 					{!AuthService.isTokenValid() &&
 						<div>
-							<Route path="/login" component={LoginPage} />
-							<Redirect to="/login" />
+							<Redirect path="/" to="/login" />
 						</div>
 					}
 				</BrowserRouter>
