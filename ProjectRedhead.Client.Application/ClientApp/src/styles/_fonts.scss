@@ -1,6 +1,14 @@
+
+// Icons
+@import '~@iconscout/unicons/css/unicons.css';
+
+// Actual fonts
+@import '/assets/fonts/inter.css';
+
+// Zona font
 @font-face {
   font-family: 'Zona Pro Extra Bold';
-  src: url('./assets/fonts/ZonaPro-ExtraBoldDemo.otf');
+  src: url('/assets/fonts/ZonaPro-ExtraBoldDemo.otf');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');

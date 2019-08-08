@@ -15,40 +15,6 @@ const App = () => {
 			</div>
 			<div id="content">
 				<AppRouter />
-				<h1>Hey Gino 👋</h1>
-
-				<div className="grid-container">
-					<div className="item w-4">
-						<div className="gap">
-							<Card>Test</Card>
-						</div>
-					</div>
-					<div className="item w-4">
-						<div className="gap">
-							<Card>Test</Card>
-						</div>
-					</div>
-					<div className="item w-4">
-						<div className="gap">
-							<Card>Test</Card>
-						</div>
-					</div>
-					<div className="item w-4">
-						<div className="gap">
-							<Card>Test</Card>
-						</div>
-					</div>
-					<div className="item w-4">
-						<div className="gap">
-							<Card>Test</Card>
-						</div>
-					</div>
-					<div className="item w-4">
-						<div className="gap">
-							<Card>Test</Card>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	);

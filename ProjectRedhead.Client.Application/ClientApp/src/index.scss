@@ -1,8 +1,6 @@
 @import './styles/fonts';
 @import './styles/variables';
 
-@import '~@iconscout/unicons/css/unicons.css';
-
 @import './styles/grid.scss';
 
 body {
@@ -15,4 +13,5 @@ body {
 
 h1, h2, h3 {
   font-family: $title-font, Arial, Helvetica, sans-serif;
+  font-weight: 800;
 }

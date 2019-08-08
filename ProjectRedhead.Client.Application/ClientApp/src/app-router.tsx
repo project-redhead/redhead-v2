@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import AuthService from './common/services/auth';
 
 import { LoginPage, LoginCallbackPage } from './features/auth'
 
-import AuthService from './common/services/auth';
+import Dashboard from './features/home/dashboard';
 
 const AppRouter = () => (
 	<BrowserRouter>
@@ -18,7 +19,7 @@ const AppRouter = () => (
 		<>
 			{/* Member pages */}
 			{AuthService.isTokenValid() &&
-				<Route exact path="/" component={() => <span>Hello</span>} />
+				<Route exact path="/" component={Dashboard} />
 			}
 		</>
 
