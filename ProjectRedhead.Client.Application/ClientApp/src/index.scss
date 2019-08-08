@@ -10,7 +10,7 @@
 }
 
 body {
-  @apply .enable-font-features;
+  @extend .enable-font-features;
 
   margin: 0;
   font-family: $body-font, Arial, Helvetica, sans-serif;

@@ -38,7 +38,7 @@ namespace ProjectRedhead.Application.Features.Auth.Requests
                 throw new StatusException(400, "Bad request", "No external user was found in the current request");
 
             // Get user
-            var user = await _userRepository.GetOrAddByIdAsync(new User(externalId, externalName, UserRole.Member));
+            var user = await _userRepository.GetOrAddByIdAsync(new Domain.UserAggregrate.User(externalId, externalName, UserRole.Member));
             
             // Write JWT
             var jwt = _tokenService.WriteToken(user.Id, request.Context.Request.Host.Host);
