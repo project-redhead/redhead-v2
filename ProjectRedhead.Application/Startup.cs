@@ -74,7 +74,6 @@ namespace ProjectRedhead.Application
                         options.RequireHttpsMetadata = false;
                         options.SaveToken = true;
 
-                        // TODO: Read from config
                         options.TokenValidationParameters = services.BuildServiceProvider()
                             .GetRequiredService<IOptions<RedheadSecurityOptions>>()
                             .Value.TokenValidationParameters;

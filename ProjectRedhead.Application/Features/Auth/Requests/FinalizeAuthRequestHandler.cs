@@ -39,10 +39,8 @@ namespace ProjectRedhead.Application.Features.Auth.Requests
 
             // Get user
             var user = await _userRepository.GetOrAddByIdAsync(new User(externalId, externalName, UserRole.Member));
-
-            // Generate JWT
-            // TODO: Refactor to service class
-
+            
+            // Write JWT
             var jwt = _tokenService.WriteToken(user.Id, request.Context.Request.Host.Host);
 
             var redirect = QueryHelpers.AddQueryString(request.RedirectUrl, "token", jwt);
