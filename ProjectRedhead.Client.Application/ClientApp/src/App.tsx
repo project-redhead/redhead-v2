@@ -19,21 +19,28 @@ const App = () => {
 			</div>
 			<div id="content">
 				<BrowserRouter>
-					{/* Login pages */}
-					<Route exact path="/login" component={LoginPage} />
-					<Route path="/login/callback" component={LoginCallbackPage} />
+					{/* Global pages */}
+					<>
+						{/* Login pages */}
+						<Route exact path="/login" component={LoginPage} />
+						<Route path="/login/callback" component={LoginCallbackPage} />
+					</>
 
-					{/* Member pages */}
-					{AuthService.isTokenValid() &&
-						<Route exact path="/" component={() => <span>Hello</span>} />
-					}
+					{/* Private pages */}
+					<>
+						{/* Member pages */}
+						{AuthService.isTokenValid() &&
+							<Route exact path="/" component={() => <span>Hello</span>} />
+						}
+					</>
 
-					{/* Redirect to login */}
-					{!AuthService.isTokenValid() &&
-						<div>
+					{/* Misc */}
+					<>
+						{/* Redirect to login */}
+						{!AuthService.isTokenValid() &&
 							<Redirect path="/" to="/login" />
-						</div>
-					}
+						}
+					</>
 				</BrowserRouter>
 				<h1>Hey Gino 👋</h1>
 
