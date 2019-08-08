@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -36,6 +37,8 @@ namespace ProjectRedhead.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddHttpContextAccessor();
+            services.AddCors();
 
             // Options
             services.AddOptions();
@@ -74,7 +77,6 @@ namespace ProjectRedhead.Application
                         options.RequireHttpsMetadata = false;
                         options.SaveToken = true;
 
-                        // TODO: Read from config
                         options.TokenValidationParameters = services.BuildServiceProvider()
                             .GetRequiredService<IOptions<RedheadSecurityOptions>>()
                             .Value.TokenValidationParameters;
@@ -82,11 +84,15 @@ namespace ProjectRedhead.Application
                         options.IncludeErrorDetails = true;
                     });
 
+            // Services
+            services.AddSingleton<ICurrentUserAccessor, CurrentUserHttpAccessor>();
+
             // Repositories
             services.AddSingleton<IUserRepository, UserRepository>();
 
             // Third party services
             services.AddMediatR(typeof(Startup).Assembly);
+            services.AddAutoMapper(typeof(Startup).Assembly);
             services.AddOpenApiDocument(config => { config.Title = "redhead API"; });
         }
 
@@ -106,6 +112,9 @@ namespace ProjectRedhead.Application
             }
 
             app.UseHttpsRedirection();
+
+            // TODO: Apply correct settings while in production
+            app.UseCors(builder => { builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials(); });
 
             app.UseAuthentication();
             app.UseMvc();

@@ -1,11 +1,17 @@
+@import '~normalize.css';
+
 @import './styles/fonts';
 @import './styles/variables';
 
-@import '~@iconscout/unicons/css/unicons.css';
-
 @import './styles/grid.scss';
 
+.enable-font-features {
+  font-feature-settings: 'calt' 1, 'liga' 1;
+}
+
 body {
+  @extend .enable-font-features;
+
   margin: 0;
   font-family: $body-font, Arial, Helvetica, sans-serif;
 
@@ -15,4 +21,10 @@ body {
 
 h1, h2, h3 {
   font-family: $title-font, Arial, Helvetica, sans-serif;
+  letter-spacing: -0.06em;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 44px;
 }
