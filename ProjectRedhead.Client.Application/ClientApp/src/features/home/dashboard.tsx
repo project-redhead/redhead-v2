@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import UserApiService, { User } from '../../common/services/api/user';
+
 import Card from '../../components/card';
 
+
 const Dashboard = () => {
+
+	const [user, setUser] = useState<User>({});
+	useEffect(() => {
+		UserApiService.getCurrentUser().then(u => setUser(u));
+	}, [user]);
+
 	return (
 		<div>
-			<h1>Hey Gino 👋</h1>
+			{user && <h1>Hey {user.displayName} 👋</h1>}
 
 			<div className="grid-container">
 				<div className="item w-4">
