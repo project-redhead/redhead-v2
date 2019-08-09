@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.box-container {
+	background-color: $light;
+	padding: $large-padding;
+
+	border-radius: $border-radius-sm * 2;
+
+	@media screen and (max-width: $break-sm) {
+		padding: $medium-padding;
+	}
+}

@@ -1,15 +1,6 @@
 @import '../../styles/variables';
 
 .trending-bet {
-	background-color: $light;
-	padding: $large-padding;
-
-	border-radius: $border-radius-sm * 2;
-
-	@media screen and (max-width: $break-sm) {
-		padding: $medium-padding;
-	}
-
 	h3 {
 		margin: 0;
 		font-family: $serif-font;
