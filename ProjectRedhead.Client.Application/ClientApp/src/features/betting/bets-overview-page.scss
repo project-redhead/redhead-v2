@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+.trending-bet {
+	background-color: $light;
+	padding: $large-padding;
+
+	border-radius: $border-radius-sm * 2;
+
+	@media screen and (max-width: $break-sm) {
+		padding: $medium-padding;
+	}
+
+	h3 {
+		margin: 0;
+		font-family: $serif-font;
+		font-size: 3em;
+		font-style: italic;
+
+		@media screen and (max-width: $break-sm) {
+			font-size: 2em;
+		}
+	}
+
+	p.author {
+		margin: 0;
+		padding: $small-padding 0 0 $small-padding;
+	}
+}

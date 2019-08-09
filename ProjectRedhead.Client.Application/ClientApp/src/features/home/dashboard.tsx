@@ -14,7 +14,7 @@ const Dashboard = () => {
 
 	return (
 		<div>
-			{user && <h1>Hey {user.displayName} 👋</h1>}
+			{user && <h1 className="header">Hey {user.displayName} 👋</h1>}
 
 			<div className="grid-container">
 				<div className="item w-4">

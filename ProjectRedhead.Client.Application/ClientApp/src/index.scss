@@ -4,6 +4,7 @@
 @import './styles/variables';
 
 @import './styles/grid.scss';
+@import './styles/buttons.scss';
 
 .enable-font-features {
   font-feature-settings: 'calt' 1, 'liga' 1;
@@ -27,11 +28,51 @@ h1, h2, h3 {
 
 h1 {
   font-weight: 600;
-  font-size: 44px;
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+
+  opacity: 0.95;
 }
 
 .header {
   margin: 0px;
+  margin-bottom: $medium-padding;
+}
+
+a {
+  color: $primary-color-light;
+  text-decoration: underline;
+
+  &:visited {
+    color: $primary-color;
+  }
+}
+
+hr {
+  margin: $medium-padding 0px;
+  border-color: $dark;
+  opacity: 0.25;
+
+  &.trimmed {
+    width: 20%;
+  }
+
+  &.trimmed-40 {
+    width: 40%;
+  }
+
+  &.trimmed-60 {
+    width: 60%;
+  }
 }
 
 // Pages
