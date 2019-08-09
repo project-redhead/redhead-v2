@@ -1,36 +1,4 @@
-@import './variables';
-
-div.grid-container {
-	display: flex;
-
-	flex-direction: row;
-	flex-wrap: wrap;
-
-	width: 100%;
-
-	.item {
-		&.w-1 {
-			width: calc(100% / 12);
-		}
-
-		&.w-4 {
-			width: calc(100% / 3);
-
-			&:nth-of-type(4n) .gap,
-			&:first-of-type .gap {
-				margin-left: 0px;
-			}
-
-			&:nth-of-type(3n) .gap {
-				margin-right: 0px;
-			}
-		}
-
-		&.w-6 {
-			width: calc(100% / 2);
-		}
-	}
-}
+@import '~flexboxgrid';
 
 .gap {
 	margin: $small-padding;

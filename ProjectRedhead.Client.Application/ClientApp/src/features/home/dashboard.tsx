@@ -16,36 +16,24 @@ const Dashboard = () => {
 		<div>
 			{user && <h1 className="header">Hey {user.displayName} 👋</h1>}
 
-			<div className="grid-container">
-				<div className="item w-4">
-					<div className="gap">
-						<Card>Test</Card>
-					</div>
+			<div className="row">
+				<div className="col-md-6 col-sm-12">
+					<Card>Test</Card>
 				</div>
-				<div className="item w-4">
-					<div className="gap">
-						<Card>Test</Card>
-					</div>
+				<div className="col-md-6 col-sm-12">
+					<Card>Test</Card>
 				</div>
-				<div className="item w-4">
-					<div className="gap">
-						<Card>Test</Card>
-					</div>
+				<div className="col-md-6 col-sm-12">
+					<Card>Test</Card>
 				</div>
-				<div className="item w-4">
-					<div className="gap">
-						<Card>Test</Card>
-					</div>
+				<div className="col-md-6 col-sm-12">
+					<Card>Test</Card>
 				</div>
-				<div className="item w-4">
-					<div className="gap">
-						<Card>Test</Card>
-					</div>
+				<div className="col-md-6 col-sm-12">
+					<Card>Test</Card>
 				</div>
-				<div className="item w-4">
-					<div className="gap">
-						<Card>Test</Card>
-					</div>
+				<div className="col-md-6 col-sm-12">
+					<Card>Test</Card>
 				</div>
 			</div>
 		</div>
