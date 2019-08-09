@@ -19,6 +19,7 @@ body {
   background-color: $light-01;
 }
 
+// Headings
 h1, h2, h3 {
   font-family: $title-font, Arial, Helvetica, sans-serif;
   letter-spacing: -0.06em;
@@ -27,4 +28,27 @@ h1, h2, h3 {
 h1 {
   font-weight: 600;
   font-size: 44px;
+}
+
+.header {
+  margin: 0px;
+}
+
+// Pages
+#content > div {
+  animation: entranceAnimation 0.4s $ease-out-expo;
+
+  @keyframes entranceAnimation {
+    from {
+      position: absolute;
+      transform: translateX($large-padding);
+      opacity: 0.2;
+    }
+
+    to {
+      position: initial;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
