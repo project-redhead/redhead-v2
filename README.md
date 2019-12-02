@@ -1,5 +1,7 @@
 # Project REDHEAD v2
 
+> ⚠ **Das Projekt wird hier fortgeführt:** https://dev.azure.com/foodies-inc/foody
+
 [![Build Status](https://dev.azure.com/ginomessmer/Project%20REDHEAD%20v2/_apis/build/status/redhead%20Build?branchName=master)](https://dev.azure.com/ginomessmer/Project%20REDHEAD%20v2/_build/latest?definitionId=20&branchName=master)
 
 
